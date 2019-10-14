@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ImageList.css';
+import { connect } from 'react-redux';
 
-const ImageList = () => {
+const ImageList = (props) => {
     const [imageList, setImageList] = useState([]);
 
     function ddd() {
@@ -25,7 +26,8 @@ const ImageList = () => {
             <ul className="image-list">
                 {
                     imageList.map(image => <li key={image.id} className="image-list-item">
-                                            <img className="thumbnail-image" src={image.download_url} alt=""/>
+                                            <img className="thumbnail-image" src={image.download_url} alt=""
+                                                onClick={ () => props.showImage(image) }/>
                                            </li>)
                 }
             </ul>
@@ -33,4 +35,16 @@ const ImageList = () => {
     );
 };
 
-export default ImageList;
+const mapStateToProps = state => {
+  return {
+
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+      showImage: (image) => dispatch({ type: "SHOW_IMAGE", selectedImage: image })
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageList);

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ImageList from './components/ImageList/ImageList';
 import ImageView from "./components/ImageView/ImageView";
+import { connect } from 'react-redux';
 
 function App() {
     const selectedImage = {
@@ -13,6 +14,12 @@ function App() {
         width: 5472
     };
 
+    // const [selectedImage, setSelectedImage] = useState(null);
+
+    // store.subscribe(() => {
+    //     setSelectedImage(store.getState().selectedImage)
+    // });
+
   return (
     <div className="waycare-app">
         <ImageList />
@@ -21,4 +28,11 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        selectedImage: state.selectedImage
+    }
+};
+
+export default connect(mapStateToProps, null)(App);
+// export default App;
