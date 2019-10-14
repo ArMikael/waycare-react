@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Sidebar.css';
+import './ImageList.css';
 
-const Sidebar = () => {
+const ImageList = () => {
     const [imageList, setImageList] = useState([]);
 
     function ddd() {
@@ -33,4 +33,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default ImageList;
