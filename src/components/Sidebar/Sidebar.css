@@ -1,0 +1,13 @@
+.sidebar {
+    width: 300px;
+}
+
+.image-list {
+    list-style: none;
+    padding: 0;
+}
+
+.thumbnail-image {
+    width: 300px;
+    cursor: pointer;
+}

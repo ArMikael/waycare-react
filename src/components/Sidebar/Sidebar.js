@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Sidebar.css';
 
 const Sidebar = () => {
     const [imageList, setImageList] = useState([]);
+
+    function ddd() {
+        return true;
+    }
 
     useEffect(() => {
         // thumbnailWidth = 285;
@@ -20,7 +25,7 @@ const Sidebar = () => {
             <ul className="image-list">
                 {
                     imageList.map(image => <li key={image.id} className="image-list-item">
-                                                {image.id}
+                                            <img className="thumbnail-image" src={image.download_url} alt=""/>
                                            </li>)
                 }
             </ul>
