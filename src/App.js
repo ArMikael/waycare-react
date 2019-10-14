@@ -5,12 +5,12 @@ import ImageView from "./components/ImageView/ImageView";
 
 function App() {
     const selectedImage = {
-        author: "Alejandro Escamilla",
-        download_url: "https://picsum.photos/id/0/5616/3744",
-        height: 3744,
-        id: "0",
-        url: "https://unsplash.com/photos/yC-Yzbqy7PY",
-        width: 5616
+        author: "Roberto Nickson",
+        download_url: "https://picsum.photos/id/1011/5472/3648",
+        height: 3648,
+        id: "1011",
+        url: "https://unsplash.com/photos/7BjmDICVloE",
+        width: 5472
     };
 
   return (
