@@ -1,11 +1,11 @@
+import * as actionTypes from '../actions';
+
 const initialState = {
   selectedImage: ''
 };
 
 const rootReducer = (state = initialState, action) => {
-    if (action.type === "SHOW_IMAGE") {
-        console.log('SHOW_IMAGE', action.selectedImage);
-
+    if (action.type === actionTypes.SHOW_IMAGE) {
         return {
             ...state,
             selectedImage: action.selectedImage

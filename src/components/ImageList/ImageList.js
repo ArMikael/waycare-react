@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ImageList.css';
 import { connect } from 'react-redux';
+import * as actionTypes from '../../store/actions';
 
 const ImageList = (props) => {
     const [imageList, setImageList] = useState([]);
@@ -36,7 +37,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      showImage: (image) => dispatch({ type: "SHOW_IMAGE", selectedImage: image })
+      showImage: (image) => dispatch({ type: actionTypes.SHOW_IMAGE, selectedImage: image })
   }
 };
 

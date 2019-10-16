@@ -2,8 +2,6 @@ import React from 'react';
 import './ImageView.css';
 
 const ImageView = (props) => {
-    console.log('ImageView props: ', props);
-
     return (
         <section className="image-container">
             {
@@ -23,8 +21,6 @@ const ImageView = (props) => {
                     </div>
                 </div>
             }
-
-
         </section>
     );
 };
