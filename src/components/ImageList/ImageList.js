@@ -6,14 +6,7 @@ import { connect } from 'react-redux';
 const ImageList = (props) => {
     const [imageList, setImageList] = useState([]);
 
-    function ddd() {
-        return true;
-    }
-
     useEffect(() => {
-        // thumbnailWidth = 285;
-        // thumbnailHeight = 100;
-
         axios.get('https://picsum.photos/v2/list?limit=20')
             .then((response) => {
                 setImageList(response.data);
@@ -27,7 +20,7 @@ const ImageList = (props) => {
                 {
                     imageList.map(image => <li key={image.id} className="image-list-item">
                                             <img className="thumbnail-image" src={image.download_url} alt=""
-                                                onClick={ () => props.showImage(image) }/>
+                                                onClick={() => props.showImage(image)}/>
                                            </li>)
                 }
             </ul>
@@ -37,7 +30,7 @@ const ImageList = (props) => {
 
 const mapStateToProps = state => {
   return {
-
+    selectedImage: state.selectedImage
   }
 };
 
