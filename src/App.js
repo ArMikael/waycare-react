@@ -4,7 +4,7 @@ import ImageList from './components/ImageList/ImageList';
 import ImageView from "./components/ImageView/ImageView";
 import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
     const defaultImage = {
         author: "Roberto Nickson",
         download_url: "https://picsum.photos/id/1011/5472/3648",
@@ -14,12 +14,10 @@ function App() {
         width: 5472
     };
 
-    const [selectedImage, setSelectedImage] = useState(defaultImage);
-
     return (
         <div className="waycare-app">
             <ImageList />
-            <ImageView selectedImage={ selectedImage }/>
+            <ImageView selectedImage={ props.selectedImage || defaultImage }/>
         </div>
     );
 }
